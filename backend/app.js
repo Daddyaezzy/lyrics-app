@@ -5,13 +5,11 @@ import dotenv from "dotenv";
 // import {router as apiCall} from "./apiCalls/apiCall";
 
 const app = express();
-dotenv.config({ path: "../.env" });
+dotenv.config();
 
 app.use(cors());
 // app.use("", apiCall);
 const apikey = process.env.API_KEY;
-
-console.log(dotenv.config({ path: "../.env" }));
 
 app.get("/", (req, res) => {
   const API = `https://api.musixmatch.com/ws/1.1/chart.tracks.get?chart_name=top&page=1&page_size=10&country=ng&f_has_lyrics=1&apikey=${apikey}`;
