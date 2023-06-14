@@ -20,7 +20,7 @@ const Search = () => {
     e.preventDefault();
 
     axios
-      .get("http://localhost:5000/search/song", {
+      .get("https://lyrics-app-v6mn.onrender.com/search/song", {
         params: { q: searchTitle },
       })
       .then((res) => {

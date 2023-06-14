@@ -15,16 +15,18 @@ const Lyrics = () => {
   const { id } = useParams();
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/lyrics/${id}`)
+      .get(`https://lyrics-app-v6mn.onrender.com/lyrics/${id}`)
       .then((res) => {
         // console.log(res.data);
         setLyrics(res.data.message.body.lyrics);
         // console.log(lyrics);
 
-        return axios.get(`http://localhost:5000/track/${id}`).then((res) => {
-          // console.log(res.data);
-          setTrack(res.data.message.body.track);
-        });
+        return axios
+          .get(`https://lyrics-app-v6mn.onrender.com/track/${id}`)
+          .then((res) => {
+            // console.log(res.data);
+            setTrack(res.data.message.body.track);
+          });
       })
       .catch((err) => console.log(err));
   }, [id]);
