@@ -25,7 +25,7 @@ export const Provider = (props) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/")
+      .get("https://lyrics-app-v6mn.onrender.com")
 
       .then((res) => {
         // console.log(res.data);
